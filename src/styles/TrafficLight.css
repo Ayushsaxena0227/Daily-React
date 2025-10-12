@@ -1,0 +1,50 @@
+.traffic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.light {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #222;
+  opacity: 0.3;
+  transition: opacity 0.4s ease, background-color 0.4s ease;
+}
+
+.light.red {
+  background-color: red;
+  opacity: 1;
+}
+
+.light.yellow {
+  background-color: yellow;
+  opacity: 1;
+}
+
+.light.green {
+  background-color: green;
+  opacity: 1;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
