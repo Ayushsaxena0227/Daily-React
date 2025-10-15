@@ -1,28 +1,25 @@
 import { useState } from "react";
-
+// 4. Add a “Clear” button to reset an input field back to empty
 // Build a form that stores firstName, lastName in state and displays the full name below as you type (live preview).
 export default function Name() {
-  const [firstName, SetfirstName] = useState("");
-  const [lastName, SetLastName] = useState("");
+  // const [firstName, SetfirstName] = useState("");
+  // const [lastName, SetLastName] = useState("");
+  const [text, Settext] = useState("");
+  const handleCLick = () => {
+    Settext("");
+  };
   return (
     <>
       <h1>Live name</h1>
       <input
         type="text"
-        placeholder="type first name"
-        value={firstName}
-        onChange={(e) => SetfirstName(e.target.value)}
+        name=""
+        id=""
+        onChange={(e) => Settext(e.target.value)}
+        value={text}
       />
-      <input
-        type="text"
-        placeholder="type last name"
-        value={lastName}
-        onChange={(e) => SetLastName(e.target.value)}
-      />
-      <p>
-        hi :{firstName}
-        {lastName}
-      </p>
+      {/* <p>{text}</p> */}
+      <button onClick={handleCLick}>Clear Input</button>
     </>
   );
 }

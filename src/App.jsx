@@ -40,6 +40,7 @@ import Checkbox from "./components/CheckBox";
 import ColorToggle from "./components/Trafficlight";
 import Likes from "./components/Likes";
 import Maxchar from "./components/Array";
+import Parent from "./components/Parent";
 
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
@@ -100,7 +101,9 @@ function App() {
         {/* <Checkbox /> */}
         {/* <ColorToggle /> */}
         {/* <Likes /> */}
-        <Maxchar />
+        {/* <Maxchar /> */}
+        {/* <Parent /> */}
+        <Name />
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
           <Route element={<Name />} path="/name"></Route>
