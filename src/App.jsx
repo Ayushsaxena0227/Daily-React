@@ -41,6 +41,7 @@ import ColorToggle from "./components/Trafficlight";
 import Likes from "./components/Likes";
 import Maxchar from "./components/Array";
 import Parent from "./components/Parent";
+import Greeting from "./components/Parent";
 
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
@@ -103,7 +104,10 @@ function App() {
         {/* <Likes /> */}
         {/* <Maxchar /> */}
         {/* <Parent /> */}
-        <Name />
+        {/* <Name />
+        <Greeting name="ALex" />
+        <Greeting name="aman" /> */}
+        <Toggle />
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
           <Route element={<Name />} path="/name"></Route>
