@@ -1,8 +1,14 @@
-export default function Greeting({ name }) {
+import UserProfile from "./UserProfile";
+
+export default function Greeting() {
+  const Userdata = {
+    name: "ayush",
+    age: 30,
+    city: "rudrapur",
+  };
   return (
-    // Create a greeting component that accepts a name prop and renders “Hello, {name}!”.
     <>
-      <h1>hello: {name}</h1>
+      <UserProfile user={Userdata} />
     </>
   );
 }

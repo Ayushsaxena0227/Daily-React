@@ -42,6 +42,7 @@ import Likes from "./components/Likes";
 import Maxchar from "./components/Array";
 import Parent from "./components/Parent";
 import Greeting from "./components/Parent";
+import Checked from "./components/Chcked";
 
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
@@ -107,7 +108,9 @@ function App() {
         {/* <Name />
         <Greeting name="ALex" />
         <Greeting name="aman" /> */}
-        <Toggle />
+        {/* <Toggle /> */}
+        {/* <Greeting /> */}
+        <Checked />
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
           <Route element={<Name />} path="/name"></Route>
