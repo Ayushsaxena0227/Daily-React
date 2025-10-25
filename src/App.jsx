@@ -46,6 +46,8 @@ import Checked from "./components/Chcked";
 import Counter from "./components/Counter";
 import Timer from "./components/Timer";
 import Todo from "./components/Todo";
+import Feedback from "./components/Feedback";
+import SearchList from "./components/Filter";
 
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
@@ -115,7 +117,10 @@ function App() {
         {/* <Greeting /> */}
         {/* <Checked /> */}
         {/* <Counter /> */}
-        <Timer />/{/* <Todo /> */}
+        <SearchList />
+        {/* <Timer />/<Todo /> */}
+        {/* <Feedback /> */}
+
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
           <Route element={<Name />} path="/name"></Route>
