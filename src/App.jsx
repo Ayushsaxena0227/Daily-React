@@ -43,6 +43,9 @@ import Maxchar from "./components/Array";
 import Parent from "./components/Parent";
 import Greeting from "./components/Parent";
 import Checked from "./components/Chcked";
+import Counter from "./components/Counter";
+import Timer from "./components/Timer";
+import Todo from "./components/Todo";
 
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
@@ -110,7 +113,9 @@ function App() {
         <Greeting name="aman" /> */}
         {/* <Toggle /> */}
         {/* <Greeting /> */}
-        <Checked />
+        {/* <Checked /> */}
+        {/* <Counter /> */}
+        <Timer />/{/* <Todo /> */}
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
           <Route element={<Name />} path="/name"></Route>
