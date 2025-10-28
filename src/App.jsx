@@ -48,6 +48,7 @@ import Timer from "./components/Timer";
 import Todo from "./components/Todo";
 import Feedback from "./components/Feedback";
 import SearchList from "./components/Filter";
+import PaymentSelector from "./components/Chcked";
 
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
@@ -116,23 +117,26 @@ function App() {
         {/* <Toggle /> */}
         {/* <Greeting /> */}
         {/* <Checked /> */}
+        <Counter />
+        {/* <SearchList /> */}
+        {/* <PaymentSelector /> */}
+        {/* <Timer /> */}
         {/* <Counter /> */}
-        <SearchList />
         {/* <Timer />/<Todo /> */}
         {/* <Feedback /> */}
 
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
-          <Route element={<Name />} path="/name"></Route>
-          <Route
+          <Route element={<Name />} path="/name"></Route> */}
+        {/* <Route
             path="/api"
             element={
               <Suspense fallback={<p>component loading</p>}>
                 <LazyLoading />
               </Suspense>
             }
-          ></Route>
-        </Routes> */}
+          ></Route> */}
+        {/* </Routes> */}
       </div>
     </>
   );

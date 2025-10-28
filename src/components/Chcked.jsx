@@ -1,24 +1,49 @@
 import { useState } from "react";
 
-export default function Checked() {
-  // Add a checkbox that enables a submit button only when checked
-  const [change, setchange] = useState("");
-  const [enable, Setenable] = useState(false);
-  const handleClick = () => {
-    Setenable((prev) => !prev);
-  };
+export default function PaymentSelector() {
+  const [payment, setPayment] = useState(""); // current selection
+
   return (
     <>
-      <h1>CheckBox</h1>
-      <input
-        type="checkbox"
-        name=""
-        id=""
-        onChange={(e) => setchange(e.target.value)}
-        onClick={handleClick}
-      />
+      <h2>Select Payment Method</h2>
 
-      <button disabled={!enable}>submit</button>
+      <label>
+        <input
+          type="radio"
+          name="payment" // all radios share the same name
+          value="creditCard"
+          checked={payment === "creditCard"}
+          onChange={(e) => setPayment(e.target.value)}
+        />
+        Credit Card
+      </label>
+      <br />
+
+      <label>
+        <input
+          type="radio"
+          name="payment"
+          value="paypal"
+          checked={payment === "paypal"}
+          onChange={(e) => setPayment(e.target.value)}
+        />
+        PayPal
+      </label>
+      <br />
+
+      <label>
+        <input
+          type="radio"
+          name="payment"
+          value="upi"
+          checked={payment === "upi"}
+          onChange={(e) => setPayment(e.target.value)}
+        />
+        UPI
+      </label>
+
+      <hr />
+      <p>Selected method: {payment || "None"}</p>
     </>
   );
 }

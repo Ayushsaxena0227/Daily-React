@@ -1,23 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Timer() {
-  const [show, setShow] = useState(false);
+  const [count, setCount] = useState(0);
 
-  const handleClick = () => {
-    setShow(true);
+  useEffect(() => {
+    // const id = setInterval(() => setCount((c) => c + 1), 1000);
+    // const id = setInterval(() => {
+    //   setCount((c) => c + 1);
+    // }, 1000);
 
-    setTimeout(() => {
-      setShow(false);
-    }, 3000);
-  };
+    return () => {
+      clearInterval(id); // 🧼 Clean up interval
+      console.log("Timer stopped");
+    };
+  }, []); // run once
 
-  return (
-    <>
-      <h2>Timer</h2>
-      <button onClick={handleClick}>Click Me</button>
-
-      {/* Conditionally render message */}
-      {show && <p style={{ color: "green" }}>Hey brother!</p>}
-    </>
-  );
+  return <h2>Seconds: {count}</h2>;
 }

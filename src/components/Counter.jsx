@@ -1,20 +1,19 @@
 import { useState } from "react";
 
-// Build a counter that increments and resets to 0 after it reaches 5.
+// Build a counter that starts at 10 and decreases by 1 each click until 0, then disables the button.
 export default function Counter() {
-  const [count, Setcount] = useState(0);
-  const handleclick = () => {
-    if (count >= 5) {
-      Setcount(0);
-    } else {
-      Setcount(count + 1);
-    }
+  const [count, Setcount] = useState(10);
+  const handleCLick = () => {
+    Setcount((prev) => prev - 1);
   };
+
   return (
     <>
-      <h2>Counter</h2>
-      <button onClick={handleclick}>Increase</button>
-      <p>{count}</p>
+      <h1>Coutner</h1>
+      <p>count:{count}</p>
+      <button onClick={handleCLick} disabled={count === 0}>
+        decrese me
+      </button>
     </>
   );
 }
