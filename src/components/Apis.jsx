@@ -1,36 +1,53 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-// 8. Fetch users and filter only those whose email ends with “.biz”.
-export default function Emails() {
-  const [loading, setloading] = useState(false);
-  const [mails, Setmails] = useState([]);
+export default function Posts() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // ✅ DEFINE THE FUNCTION HERE, in the component's top-level scope
+  const fetchPosts = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("https://dummyjson.com/posts?limit=30");
+      if (!res.ok) throw new Error("Network response was not ok");
+      const data = await res.json();
+      setPosts(data.posts);
+    } catch (error) {
+      setError("Failed to fetch posts.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // useEffect can now see and call fetchPosts
   useEffect(() => {
-    const FetchEmails = async () => {
-      try {
-        setloading(true);
-        const res = await fetch("https://dummyjson.com/users");
-        const data = await res.json();
-        console.log(data);
-        const Fetched = data.users.filter((item) =>
-          item.email.startsWith("sophia")
-        );
-        console.log(Fetched);
-        Setmails(Fetched);
-        // console.log(Fetchedresp);
-      } catch (error) {
-        console.log("Error whilef fetching", error);
-      } finally {
-        setloading(false);
-      }
-    };
-    FetchEmails();
+    fetchPosts();
   }, []);
+
+  // handleClick can ALSO see and call fetchPosts
+  const handleClick = () => {
+    fetchPosts();
+  };
+
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
+
+  // A better loading state check
+  if (loading && posts.length === 0) return <p>Loading initial posts...</p>;
+
   return (
-    <>
-      <h1>Emails</h1>
-      {mails.map((item) => (
-        <li key={item.id}>{item.username}</li>
-      ))}
-    </>
+    <div>
+      <h2>Posts</h2>
+      {/* Don't forget a key and a parent <ul> */}
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+      <button onClick={handleClick} disabled={loading}>
+        {loading ? "Refreshing..." : "Refresh"}
+      </button>
+    </div>
   );
 }

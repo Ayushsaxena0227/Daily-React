@@ -30,7 +30,6 @@ import Api from "./components/Api";
 import ApiTopPost from "./components/ApiTopPost";
 import LiveProduct from "./components/Liveproduct";
 import FormValidation from "./components/FormValidation";
-import Posts from "./components/LazyLoading";
 import Paginations from "./components/paginations";
 import Apis from "./components/Apis";
 import Emails from "./components/Apis";
@@ -49,7 +48,7 @@ import Todo from "./components/Todo";
 import Feedback from "./components/Feedback";
 import SearchList from "./components/Filter";
 import PaymentSelector from "./components/Chcked";
-
+import Posts from "./components/Apis";
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
   // const [count, setCount] = useState(0);
@@ -95,6 +94,7 @@ function App() {
         {/* <LoadMore /> */}
         {/* <Textarea /> */}
         {/* <Toggle /> */}
+
         {/* <ListHover /> */}
         {/* <Name /> */}
         {/* <Api /> */}
@@ -117,13 +117,14 @@ function App() {
         {/* <Toggle /> */}
         {/* <Greeting /> */}
         {/* <Checked /> */}
-        <Counter />
+        {/* <Counter /> */}
         {/* <SearchList /> */}
         {/* <PaymentSelector /> */}
         {/* <Timer /> */}
         {/* <Counter /> */}
         {/* <Timer />/<Todo /> */}
         {/* <Feedback /> */}
+        <Posts />
 
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
