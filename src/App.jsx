@@ -49,6 +49,7 @@ import Feedback from "./components/Feedback";
 import SearchList from "./components/Filter";
 import PaymentSelector from "./components/Chcked";
 import Posts from "./components/Apis";
+import AutoFocusInput from "./components/Focus";
 // const LazyLoading = lazy(() => import("./components/LazyLoading"));
 function App() {
   // const [count, setCount] = useState(0);
@@ -124,7 +125,8 @@ function App() {
         {/* <Counter /> */}
         {/* <Timer />/<Todo /> */}
         {/* <Feedback /> */}
-        <Posts />
+        {/* <Posts /> */}
+        <AutoFocusInput />
 
         {/* <Routes>
           <Route path="/" element={<Textarea />}></Route>
